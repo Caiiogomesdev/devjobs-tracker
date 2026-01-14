@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16
+    container_name: devjobs_postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: devjobs
+    ports:
+      - "5433:5432"
+    volumes:
+      - devjobs_pgdata:/var/lib/postgresql/data
+
+volumes:
+  devjobs_pgdata:
